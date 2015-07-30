@@ -1,0 +1,24 @@
+
+<div class="row" ng-switch on="shops.length" ng-controller="indexCtrl">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <h2 class="text-center">Shop list</h2>
+        <p ng-switch-when="0" class="text-center text-success lead">
+            No shops in database. Would you like to <a href="/addShop">create one</a>?
+        </p>
+        <ul ng-switch-default>
+            <li ng-repeat="shop in shops | filter:query" >
+                <h2 class="page-header lead">№{{shop.num}} {{shop.name}}</h2>
+                <p class="lead">
+                    Adress : {{shop.adress}}
+                </p>
+                <p class="lead">
+                    Worktime: {{shop.worktime}}
+                </p>
+                <a roles="button" class="btn btn-primary"  href="/tableOfThings/{{shop.num}}" >See things</a>
+                <a roles="button" class="btn btn-success"  href="/editShop/{{shop.num}}" >Edit</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-3"></div>
+</div>

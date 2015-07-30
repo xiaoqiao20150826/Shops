@@ -1,0 +1,22 @@
+<div class="row" >
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <form role="form" ng-controller="editShopCtrl">
+            <div class="form-group">
+                <label >name of shop</label>
+                <input class="form-control" id="name" placeholder="Enter the name" ng-model="shop.name">
+            </div>
+            <div class="form-group">
+                <label >adress of shop</label>
+                <input  class="form-control" id="adress" placeholder="adress" ng-model="shop.adress">
+            </div>
+            <div class="form-group">
+                <label >worktime</label>
+                <input  class="form-control" id="worktime" placeholder="worktime"ng-model="shop.worktime">
+            </div>
+            <button type="submit" class="btn btn-success" ng-click="save()">save</button>
+            <a roles="button" class="btn btn-danger" href="/">close</a>
+        </form>
+    </div>
+    <div class="col-lg-3"></div>
+</div>

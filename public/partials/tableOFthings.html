@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" ng-switch on="shop.things.length">
+        <h2 class="page-header lead" >Things in {{shop.name}}</h2>
+        <p ng-switch-when="0" class="text-center text-success lead">
+            No things in this shop.
+        </p>
+        <table class="table" ng-switch-default="true">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="thing in shop.things">
+                <td>{{thing.name}}</td>
+                <td>{{thing.description}}</td>
+                <td><a  class="btn btn-success" href="/editThing/{{thing.num}}">edit</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <a  class="btn btn-primary" href="/addThing/{{shop.num}}"  >Add Thing</a>
+        <a  class="btn btn-danger" href="/">close</a>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
